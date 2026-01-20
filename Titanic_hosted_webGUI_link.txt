@@ -1,5 +1,5 @@
-Name: [Your Full Name]
-Matric Number: [Your Matric Number]
+Name: Adeniyi Adeboyin Toluwalope
+Matric Number: 23CG034021
 Machine Learning Algorithm Used: Random Forest Classifier
 Model Persistence Method Used: Joblib
 Live URL of Hosted Application: https://titanic-project-adeboyinadeniyi.onrender.com/
