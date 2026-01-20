@@ -1,0 +1,25 @@
+Name: [Your Full Name]
+Matric Number: [Your Matric Number]
+Machine Learning Algorithm Used: Random Forest Classifier
+Model Persistence Method Used: Joblib
+Live URL of Hosted Application: [Your deployed URL - e.g., https://titanic-survival-app.onrender.com]
+GitHub Repository Link: [Your GitHub repository URL - e.g., https://github.com/yourusername/Titanic_Project_YourName_MatricNo]
+
+---
+
+DEPLOYMENT NOTES:
+- Application successfully deployed on [Platform Name]
+- All model files (.pkl) included in deployment
+- Web interface accessible and functional
+- Predictions tested and verified
+
+FEATURES IMPLEMENTED:
+✓ Data preprocessing (missing value handling, encoding, scaling)
+✓ Random Forest Classifier trained and saved
+✓ Model evaluation with classification report
+✓ Model persistence using Joblib
+✓ Flask web application with responsive UI
+✓ Real-time prediction with probability display
+✓ Input validation and error handling
+✓ GitHub repository with proper structure
+✓ Complete documentation (README.md)
