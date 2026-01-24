@@ -96,81 +96,6 @@ python app.py
 
 Visit `http://localhost:5000` in your browser.
 
-## 🌐 Deployment Instructions
-
-### Option 1: Deploy to Render.com
-
-1. Create account on [Render.com](https://render.com)
-2. Create new Web Service
-3. Connect your GitHub repository
-4. Configure:
-   - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `gunicorn app:app`
-5. Click "Create Web Service"
-
-### Option 2: Deploy to PythonAnywhere.com
-
-1. Create account on [PythonAnywhere.com](https://www.pythonanywhere.com)
-2. Upload files via Files tab
-3. Create new web app (Flask)
-4. Configure WSGI file to point to your app
-5. Install requirements in Bash console:
-   ```bash
-   pip install --user -r requirements.txt
-   ```
-6. Reload web app
-
-### Option 3: Deploy to Streamlit Cloud
-
-Create a Streamlit version (`streamlit_app.py`):
-
-```python
-import streamlit as st
-import joblib
-import pandas as pd
-
-st.title("🚢 Titanic Survival Prediction")
-
-# Load model
-model = joblib.load('model/titanic_survival_model.pkl')
-scaler = joblib.load('model/scaler.pkl')
-
-# Input fields
-pclass = st.selectbox("Passenger Class", [1, 2, 3])
-sex = st.selectbox("Sex", ["Female", "Male"])
-age = st.number_input("Age", min_value=0, max_value=120, value=29)
-fare = st.number_input("Fare ($)", min_value=0.0, value=7.25)
-embarked = st.selectbox("Port", ["Cherbourg", "Queenstown", "Southampton"])
-
-if st.button("Predict"):
-    # Encode inputs
-    sex_encoded = 0 if sex == "Female" else 1
-    embarked_map = {"Cherbourg": 0, "Queenstown": 1, "Southampton": 2}
-    embarked_encoded = embarked_map[embarked]
-    
-    # Create dataframe
-    input_data = pd.DataFrame({
-        'Pclass': [pclass],
-        'Sex': [sex_encoded],
-        'Age': [age],
-        'Fare': [fare],
-        'Embarked': [embarked_encoded]
-    })
-    
-    # Scale and predict
-    input_scaled = scaler.transform(input_data)
-    prediction = model.predict(input_scaled)[0]
-    probability = model.predict_proba(input_scaled)[0]
-    
-    # Display result
-    if prediction == 1:
-        st.success(f"✅ Survived (Probability: {probability[1]*100:.2f}%)")
-    else:
-        st.error(f"❌ Did Not Survive (Probability: {probability[0]*100:.2f}%)")
-```
-
-Deploy to [Streamlit Cloud](https://streamlit.io/cloud)
-
 ## 📊 Model Performance
 
 The Random Forest Classifier achieves:
@@ -233,9 +158,8 @@ This project is created for educational purposes as part of a Machine Learning c
 
 ## 👤 Author
 
-**Your Name**  
-Matric Number: Your_Matric_Number  
-Institution: Your Institution
+**Adeniyi Adeboyin Toluwalope**  
+Institution: Covenant University
 
 ## 🙏 Acknowledgments
 
